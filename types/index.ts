@@ -30,8 +30,10 @@ export interface ParamsProps {
   params: { id: string };
 }
 
+export type SearchParamsType = { [key: string]: string | undefined };
+
 export interface SearchParamsProps {
-  searchParams: { [key: string]: string | undefined };
+  searchParams: SearchParamsType;
 }
 
 export interface URLProps {
