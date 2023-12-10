@@ -1,3 +1,4 @@
+import LeftSidebar from '@/components/shared/leftSidebar';
 import Navbar from '@/components/shared/navbar/Navbar';
 import React from 'react';
 
@@ -13,7 +14,7 @@ const Layout: React.FC<RootLayoutProps> = ({ children }) => {
     >
       <Navbar />
       <div className="flex">
-        Leftsidebar
+        <LeftSidebar />
         <section
           className="flex min-h-screen flex-1 flex-col 
                 px-6 pb-6 pt-36 
