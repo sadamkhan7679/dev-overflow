@@ -4,10 +4,10 @@ import Link from 'next/link';
 import { auth } from '@clerk/nextjs';
 
 import { Button } from '@/components/ui/button';
-// import Filter from '@/components/shared/Filter';
+import Filter from '@/components/shared/Filter';
 // import NoResult from '@/components/shared/NoResult';
 // import Pagination from '@/components/shared/Pagination';
-// import HomeFilters from '@/components/shared/Filters';
+import HomeFilters from '@/components/shared/filters';
 // import QuestionCard from '@/components/cards/QuestionCard';
 
 // import { getQuestions, getRecommendedQuestions } from '@/lib/actions/question.action';
@@ -17,6 +17,7 @@ import { Button } from '@/components/ui/button';
 import type { SearchParamsType } from '@/types';
 import type { Metadata } from 'next';
 import LocalSearchbar from '@/components/shared/search/localSearchBar';
+import { HomePageFilters } from '@/constants/filters';
 
 export const metadata: Metadata = {
   title: 'Home — DevOverflow',
@@ -73,14 +74,14 @@ const HomePage: React.FC<HomePageProps> = ({ searchParams }) => {
           otherClasses="flex-1"
         />
 
-        {/* <Filter
+        <Filter
           filters={HomePageFilters}
           otherClasses="min-h-[56px] sm:min-w-[170px]"
           containerClasses="hidden max-md:flex"
-        /> */}
+        />
       </div>
 
-      {/* <HomeFilters filters={HomePageFilters} /> */}
+      <HomeFilters filters={HomePageFilters} />
 
       {/* <div className="mt-10 flex w-full flex-col gap-6">
         {result.questions.length > 0 ? (
