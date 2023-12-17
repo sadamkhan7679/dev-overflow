@@ -5,10 +5,10 @@ import { auth } from '@clerk/nextjs';
 
 import { Button } from '@/components/ui/button';
 import Filter from '@/components/shared/Filter';
-// import NoResult from '@/components/shared/NoResult';
-// import Pagination from '@/components/shared/Pagination';
+import NoResult from '@/components/shared/NoResult';
+import Pagination from '@/components/shared/Pagination';
 import HomeFilters from '@/components/shared/filters';
-// import QuestionCard from '@/components/cards/QuestionCard';
+import QuestionCard from '@/components/cards/QuestionCard';
 
 // import { getQuestions, getRecommendedQuestions } from '@/lib/actions/question.action';
 
@@ -82,6 +82,15 @@ const HomePage: React.FC<HomePageProps> = ({ searchParams }) => {
       </div>
 
       <HomeFilters filters={HomePageFilters} />
+
+      <NoResult
+        title="No Questions Found"
+        description="Be the first to break the silence! 🚀 Ask a Question and kickstart the
+          discussion. our query could be the next big thing others learn from. Get
+          involved! 💡"
+        link="/ask-question"
+        linkTitle="Ask a Question"
+      />
 
       {/* <div className="mt-10 flex w-full flex-col gap-6">
         {result.questions.length > 0 ? (
